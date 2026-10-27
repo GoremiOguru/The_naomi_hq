@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5E4AA" />
+      <stop offset="25%" stop-color="#DFBA51" />
+      <stop offset="60%" stop-color="#B38528" />
+      <stop offset="100%" stop-color="#8A6828" />
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#242320" />
+      <stop offset="100%" stop-color="#121210" />
+    </linearGradient>
+    <radialGradient id="goldSheen" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFF5D6" stop-opacity="0.3" />
+      <stop offset="60%" stop-color="#D4AF37" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Deep Obsidian Circular Base -->
+  <circle cx="256" cy="256" r="248" fill="url(#bgGrad)" />
+  <circle cx="256" cy="256" r="248" fill="url(#goldSheen)" />
+
+  <!-- Outer Luxury Gold Bezel -->
+  <circle cx="256" cy="256" r="236" fill="none" stroke="url(#goldGrad)" stroke-width="4.5" stroke-opacity="0.9" />
+  
+  <!-- Subtle Inner Tailored Ring -->
+  <circle cx="256" cy="256" r="222" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-opacity="0.4" stroke-dasharray="6 4" />
+
+  <!-- Mastercrafted Latin Serif "N" Monogram (Seamless Single Vector Path) -->
+  <path fill="url(#goldGrad)" d="
+    M 144 142
+    H 220
+    V 158
+    C 202 158, 192 165, 192 182
+    V 204
+    L 326 352
+    V 182
+    C 326 165, 316 158, 298 158
+    V 142
+    H 374
+    V 158
+    C 356 158, 346 165, 346 182
+    V 332
+    C 346 348, 356 354, 374 354
+    V 370
+    H 298
+    V 354
+    C 316 354, 326 347, 326 332
+    V 308
+    L 192 160
+    V 332
+    C 192 348, 202 354, 220 354
+    V 370
+    H 144
+    V 354
+    C 162 354, 172 348, 172 332
+    V 182
+    C 172 165, 162 158, 144 158
+    Z
+  " />
+
+  <!-- Sparkle Diamond Star at Top-Right ("Sparkle Queen" & "Revealing Possibilities") -->
+  <g transform="translate(382, 134)" fill="url(#goldGrad)">
+    <path d="M 0 -34 Q 0 0 34 0 Q 0 0 0 34 Q 0 0 -34 0 Q 0 0 0 -34 Z" />
+    <circle cx="0" cy="0" r="4.5" fill="#FFFDF5" />
+  </g>
+
+  <!-- Delicate Accent Sparkle at Bottom-Left -->
+  <g transform="translate(130, 376) scale(0.42)" fill="url(#goldGrad)" opacity="0.85">
+    <path d="M 0 -26 Q 0 0 26 0 Q 0 0 0 26 Q 0 0 -26 0 Q 0 0 0 -26 Z" />
+  </g>
+</svg>

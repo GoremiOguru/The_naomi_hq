@@ -416,9 +416,43 @@ img {
 
 .brand-mark {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
   text-decoration: none;
   flex-shrink: 0;
+}
+
+.brand-logo-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(138, 112, 67, 0.35);
+  background: #181816;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.brand-mark:hover .brand-logo-badge {
+  transform: scale(1.06);
+  box-shadow: 0 4px 14px rgba(138, 112, 67, 0.3);
+}
+
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.brand-text-wrap {
+  display: flex;
+  flex-direction: column;
 }
 
 .brand-name {
@@ -524,6 +558,10 @@ img {
   }
   .brand-tagline {
     font-size: 0.625rem;
+  }
+  .brand-logo-badge {
+    width: 34px;
+    height: 34px;
   }
 }
 

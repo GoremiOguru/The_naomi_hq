@@ -678,6 +678,7 @@ img {
 
 .hero-title .title-segment {
   display: block;
+  min-height: 1.15em;
 }
 
 .hero-title .title-italic {

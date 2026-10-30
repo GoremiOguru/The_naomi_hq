@@ -361,40 +361,43 @@ function initTypewriter() {
       el.parentNode.insertBefore(cursor, el.nextSibling);
     }
 
+    // Reset element content so the typewriter effect types out on page load / refresh
+    el.textContent = '';
+
     let phraseIndex = 0;
-    let charIndex = el.textContent ? el.textContent.length : 0;
+    let charIndex = 0;
     let isDeleting = false;
-    let typingSpeed = 75;
 
     const type = () => {
       const currentPhrase = phrases[phraseIndex];
 
       if (isDeleting) {
-        el.textContent = currentPhrase.substring(0, charIndex - 1);
         charIndex--;
-        typingSpeed = 35;
+        el.textContent = currentPhrase.substring(0, charIndex);
       } else {
-        el.textContent = currentPhrase.substring(0, charIndex + 1);
         charIndex++;
-        typingSpeed = 65 + Math.random() * 35; // natural human cadence
+        el.textContent = currentPhrase.substring(0, charIndex);
       }
 
-      if (!isDeleting && charIndex === currentPhrase.length) {
-        // Full phrase typed, pause before deleting
-        typingSpeed = 2400;
+      let typingSpeed = isDeleting ? 30 : (55 + Math.random() * 30);
+
+      if (!isDeleting && charIndex >= currentPhrase.length) {
+        // Full phrase typed, pause so reader can absorb it
+        typingSpeed = 2200;
         isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        // Phrase deleted, switch to next phrase
+      } else if (isDeleting && charIndex <= 0) {
+        // Phrase deleted, advance to next phrase
         isDeleting = false;
         phraseIndex = (phraseIndex + 1) % phrases.length;
-        typingSpeed = 450;
+        charIndex = 0;
+        typingSpeed = 400;
       }
 
       setTimeout(type, typingSpeed);
     };
 
-    // Kick off loop with small initial delay
-    setTimeout(type, 800);
+    // Kick off typing with an initial entrance delay
+    setTimeout(type, 500);
   });
 
   // B. Scroll-Triggered Headlines Typewriter (types once when headline scrolls into view)
